@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<style>
+	body {
+        background-color: rgb(92, 14, 107);
+        margin: 0; /* Remove default margin */
+        height: 110vh; /* Set body height to 100% of viewport height */
+        display: flex;
+        flex-direction: column;
+    }
+
+	span {
+		color: red;
+		width: 100%;
+		height: 10em;
+	}
+
+	/* nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		background-color: darkslategray;
+		color: white;
+		height: 50px;
+		margin: .25em;
+	}
+
+	.navItem {
+		text-decoration: none;
+		color: white;
+	} */
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		color: white;
+		height: 75px;
+		margin-bottom: .25em;
+		position: sticky;
+		top: 0;
+		background-color: darkslategray; /* Adjust the background color as needed */
+		z-index: 1000; /* Ensure the nav bar is above other content */
+		padding: 10px; /* Adjust padding as needed */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+	}
+
+	.navItem {
+		margin-right: 20px; /* Adjust margin as needed */
+		text-decoration: none; /* Remove underline from links */
+		color: black; /* Adjust text color as needed */
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+
+	.navItem:hover {
+		text-decoration: underline; /* Optional: Add underline on hover */
+	}
+
+	.playerControls {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: darkslategray;
+        height: 75px;
+        margin-top: .25em;
+        position: sticky;
+        bottom: 0;
+        z-index: 1000; /* Ensure the footer is above other content */
+        padding: 10px;
+		box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    }
+
+	.playerButton {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+        width: 100px;
+        height: 40px;
+		padding-top: 2em;
+		padding-bottom: 2em;
+        text-decoration: none;
+        color: black;
+        background-color: transparent;
+        border: solid;
+        border-color: blue;
+        border-width: 2px;
+        border-radius: 12px;
+    }
+
+	.header {
+		color: mediumspringgreen;
+		text-align: center;
+	}
+
+	.main-main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.main-mainDiv {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: 75px;
+        gap: 10px; 
+		margin-top: 2em;
+    }
+
+	.main-mainDivItem {
+		width: 195px;
+		height: 70px;
+		font-size: 1.1em;
+		text-decoration: none;
+		text-align: center;
+		color: black;
+	}
+
+	.tvshows-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.tvshows-sectionDiv {
+		display: grid;
+		grid-template-columns: repeat(3, 200px);
+		grid-template-rows: 75px;
+		gap: 10px; 
+		margin-top: 2em;
+	}
+
+	.tvshows-sectionDivItem {
+		width: 195px;
+		height: 70px;
+		font-size: 1.1em;
+		text-decoration: none;
+		text-align: center;
+		color: black;
+	}
+
+	.tv-ass {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		margin: 1em;
+	}
+
+	.searchDiv {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.searchInnerDiv {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	.search-input {
+		width: 12em;
+		height: 3.5em;
+		border-radius: 12px;
+	}
+
+	.searchButton {
+		width: 6em;
+		height: 3.5em;
+		color: white;
+		background-color: blueviolet;
+		margin-left: 20px;
+		border: solid;
+		border-color: red;
+		border-width: 2px;
+		border-radius: 12px;
+	}
+
+	.seaH1 {
+		text-align: center;
+	}
+
+	.seaH3 {
+		text-align: center;
+	}
+
+	.seaMainDiv {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 1em;
+	}
+
+	.seaBtnGrp {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.seaBtn {
+		width: 2.35em;
+		height: 2.35em;
+		font-size: 1.25em;
+		color: black;
+		background-color: blueviolet;
+		border: solid;
+		border-color: red;
+		border-width: 2px;
+		border-radius: 12px;
+		margin: .25em;
+	}
+
+	img {
+		width: 200px;
+		height: 300px;
+		border-radius: 12px;
+		margin: 1em;
+	}
+
+	.mov-row {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		margin: 1em;
+	}
+
+	.red {
+    	color: red;
+  	}
+</style>
+
+<html>
+	<head></head>
+	<title>MTV</title>
+	<body><body>
+</html>
