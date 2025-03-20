@@ -6,12 +6,6 @@ use leptos_router::{components::*, path};
 mod moviespage;
 use crate::moviespage::MovCatListPage;
 
-// mod tvshowspage;
-// use crate::tvshowspage::TVShowsListPage;
-
-// mod searchpage;
-// use crate::searchpage::SearchPage;
-
 mod movpages {
     pub mod movapages;
     pub mod movbpages;
@@ -57,13 +51,6 @@ use crate::movpages::movspages::{SciFiPage, StalonePage, StarTrekPage, StarWarsP
 use crate::movpages::movtpages::{TinkerBellPage, TomCruisePage, TransformersPage, TremorsPage, TheRockPage};
 use crate::movpages::movvpages::VanDamPage;
 use crate::movpages::movxpages::XMenPage;
-
-
-
-
-
-
-
 
 fn main() {
 	console_error_panic_hook::set_once();
@@ -126,12 +113,9 @@ fn App() -> impl IntoView {
                     <Route path=path!("/therock") view=TheRockPage />
                     <Route path=path!("/vandam") view=VanDamPage />
                     <Route path=path!("/xmen") view=XMenPage />
-
-                    
                 </Routes>
                 
             </main>
-            // <span></span>
             <PlayerControls />
         </Router>
     }
@@ -151,7 +135,7 @@ fn NavBar() -> impl IntoView {
     view! {
         <nav>
             <a href="/" class="navItem">"Movies"</a>
-            <a href="/tvshows" class="navItem">"TV Shows"</a>
+            <a href="http://10.0.4.40:8090/" class="navItem">"TV Shows"</a>
             <a href="/search" class="navItem">"Search"</a>
         </nav>
     }
