@@ -135,7 +135,7 @@ fn NavBar() -> impl IntoView {
     view! {
         <nav>
             <a href="/" class="navItem">"Movies"</a>
-            <a href="http://10.0.4.40:8090/" class="navItem">"TV Shows"</a>
+            <a href="http://10.0.4.40:9090/" class="navItem">"TV Shows"</a>
             <a href="/search" class="navItem">"Search"</a>
         </nav>
     }
