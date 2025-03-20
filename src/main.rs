@@ -6,6 +6,9 @@ use leptos_router::{components::*, path};
 mod moviespage;
 use crate::moviespage::MovCatListPage;
 
+mod searchpage;
+use crate::searchpage::SearchPage;
+
 mod movpages {
     pub mod movapages;
     pub mod movbpages;
@@ -66,6 +69,7 @@ fn App() -> impl IntoView {
             <main>
                 <Routes fallback=|| "Not Found.">
                     <Route path=path!("/") view=MovCatListPage />
+                    <Route path=path!("/search") view=SearchPage />
                     
                     
                     <Route path=path!("/action") view=ActionPage />
