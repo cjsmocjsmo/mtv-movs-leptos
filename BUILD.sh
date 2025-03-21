@@ -6,6 +6,9 @@
 # Navigate to the directory containing the Dockerfile
 cd /home/pipi/mtv-movs-leptos
 
+git pull;
+trunk build --release;
+
 # Build the Docker image
 docker build -t mtvmovslep:latest .
 
