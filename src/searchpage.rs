@@ -40,8 +40,7 @@ pub fn SearchPage() -> impl IntoView {
             <div class="searchInnerDiv">
                 <form method="GET" action="" on:submit=on_submit>
                     <input class="search-input" type="text" placeholder="Search..." />
-                    // <input class="searchButton" type="submit" >Submit</input>
-                    <button class="searchButton" type="submit" on:click=on_submit>Submit</button>
+                    <button class="searchButton" type="submit">Submit</button>
                 </form>
             </div>
             <span class="spacerSpan"></span>
@@ -55,3 +54,4 @@ pub fn SearchPage() -> impl IntoView {
         </div>
     }
 }
+
