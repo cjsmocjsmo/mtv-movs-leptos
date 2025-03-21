@@ -1,28 +1,47 @@
+use leptos::ev::SubmitEvent;
+use leptos::task::spawn_local;
+use leptos::wasm_bindgen::JsCast;
 use leptos::prelude::*;
-// use leptos::use_query_map;
-// use leptos::html::Form;
+use leptos::web_sys::HtmlInputElement;
 
-// async fn fetch_results() {
-
-// }
+async fn fetch_results(search_query: &str) -> Result<Vec<String>, Error> {
+    // fetch search results from the server
+    let response = reqwest::get(&format!("http://10.0.4.41:7777/movsearch/{}", search_query)).await?;
+    let results = response.json::<Vec<String>>().await?;
+    Ok(results)
+}
 
 #[component]
 pub fn SearchPage() -> impl IntoView {
-    // reactive access to URL query strings
-    // let query = use_query_map();
-    // // search stored as ?q=
-    // let search = move || query.read().get("q").unwrap_or_default();
-    // // a resource driven by the search string
-    // let search_results = Resource::new(search, |_| fetch_results());
+    let search_query = signal(String::new());
+
+    let on_submit = move |ev: SubmitEvent| {
+        ev.prevent_default();
+        let input: HtmlInputElement = ev.target().unwrap().dyn_into().expect("Failed to cast to HtmlInputElement");
+        let value = input.value();
+        search_query.1.set(value.clone());
+
+        spawn_local(async move {
+            match fetch_results(&value).await {
+                Ok(results) => {
+                    // handle results
+                    log::info!("Search results: {:?}", results);
+                }
+                Err(err) => {
+                    // handle error
+                    log::error!("Error fetching search results: {:?}", err);
+                }
+            }
+        });
+    };
 
     view! {
         <div class="searchDiv">
             <div class="searchInnerDiv">
-		        <form method="GET" action="">
-                	<input class="search-input" type="text" placeholder="Search..." />
-                	// <button class="searchButton">Search</button>
-			        <input class="searchButton" type="submit" />
-		        </form>
+                <form method="GET" action="" on:submit=on_submit>
+                    <input class="search-input" type="text" placeholder="Search..." />
+                    <input class="searchButton" type="submit" >Submit</input>
+                </form>
             </div>
             <span></span>
             <span></span>
