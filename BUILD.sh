@@ -4,13 +4,13 @@
 
 
 # Navigate to the directory containing the Dockerfile
-cd /home/whitepi/mtv-movs-leptos
+cd /home/whitepi/mtv-tv-leptos
 
 git pull;
 trunk build --release;
 
 # Build the Docker image
-docker build -t mtvmovslep:latest .
+docker build -t mtvtvlep:latest .
 
 # Run the Docker container
-docker run -d -p 9092:80 mtvmovslep:latest
+docker run -d -p 9092:80 mtvtvlep:latest
