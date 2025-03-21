@@ -44,7 +44,6 @@ pub fn SearchPage() -> impl IntoView {
                 </form>
             </div>
             <span class="spacerSpan"></span>
-            <span class="spacerSpan"></span>
             <div class="searchResults">
                 <div class="searchResultDiv">
                     <img src="https://via.placeholder.com/150" alt="suppose to be a pic" />
