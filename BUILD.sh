@@ -4,7 +4,7 @@
 
 
 # Navigate to the directory containing the Dockerfile
-cd /home/whitepi/mtv-tv-leptos
+cd /home/whitepi/mtv-tv-leptos/
 
 git pull;
 trunk build --release;
