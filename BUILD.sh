@@ -3,6 +3,8 @@ cd /home/whitepi/mtv-tv-leptos/
 
 git pull;
 
+trunk clean;
+
 trunk build --release;
 
 arch=$(uname -m)
