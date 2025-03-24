@@ -40,7 +40,7 @@ pub fn GhostBustersPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-row">
+        <div class="movRow">
             {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
@@ -77,7 +77,7 @@ pub fn GodzillaPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-row">
+        <div class="movRow">
             {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {

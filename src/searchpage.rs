@@ -39,7 +39,7 @@ pub fn SearchPage() -> impl IntoView {
         <div class="searchDiv">
             <div class="searchInnerDiv">
                 <form method="GET" action="" on:submit=on_submit>
-                    <input class="search-input" type="text" placeholder="Search..." />
+                    <input class="searchInput" type="text" placeholder="Search..." />
                     <button class="searchButton" type="submit">Submit</button>
                 </form>
             </div>

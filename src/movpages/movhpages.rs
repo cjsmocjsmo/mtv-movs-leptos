@@ -45,7 +45,7 @@ pub fn HarrisonFordPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-row">
+        <div class="movRow">
             {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
@@ -82,7 +82,7 @@ pub fn HarryPotterPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-row">
+        <div class="movRow">
             {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
@@ -119,7 +119,7 @@ pub fn HellBoyPage() -> impl IntoView {
     });
 
     view! {
-        <div class="mov-row">
+        <div class="movRow">
             {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
                 let info = info.clone();
                 view! {
