@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/whitepi/mtv-movs-leptos/
+cd /home/pi/mtv-movs-leptos/
 
 git pull;
 
