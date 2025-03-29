@@ -46,8 +46,8 @@ pub fn SearchPage() -> impl IntoView {
             <span class="spacerSpan"></span>
             <div class="searchResults">
                 <div class="searchResultDiv">
-                    <img src="https://via.placeholder.com/150" alt="suppose to be a pic" />
-                    <span>Movie Title</span>
+                    <img src="https://apod.nasa.gov/apod/image/2503/LunarEclipseColors_Jin_960.jpg" alt="suppose to be a pic" />
+                    // <span>Movie Title</span>
                 </div>
             </div>
         </div>
