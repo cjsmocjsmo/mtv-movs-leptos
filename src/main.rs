@@ -120,8 +120,9 @@ fn App() -> impl IntoView {
                 </Routes>
                 
             </main>
-            <PlayerControls />
+            
         </Router>
+        <PlayerControls />
     }
 }
 
