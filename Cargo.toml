@@ -5,10 +5,10 @@ edition = "2021"
 
 [dependencies]
 console_error_panic_hook = "0.1.7"
-leptos = { version = "0.7.7", features = ["csr"] }
-leptos_router = "0.7.7"
-log = "0.4.26"
-reqwest = { version = "0.12.12", features = ["json"] }
-serde = "1.0.218"
+leptos = { version = "0.7.8", features = ["csr"] }
+leptos_router = "0.7.8"
+log = "0.4.27"
+reqwest = { version = "0.12.15", features = ["json"] }
+serde = "1.0.219"
 wasm-bindgen-futures = "0.4.50"
 
