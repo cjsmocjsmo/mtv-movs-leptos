@@ -30,7 +30,7 @@ async fn fetch_jurassicpark() -> Result<Vec<Infos>, Error> {
     Ok(jurassicpark)
 }
 async fn send_get_request(mov_id: &str) -> Result<(), Error> {
-    let url = format!("http://10.0.4.777:8080/player_set_media/{}", mov_id);
+    let url = format!("http://10.0.4.41:7777/player_set_media/{}", mov_id);
     reqwest::get(&url).await?;
     Ok(())
 }
