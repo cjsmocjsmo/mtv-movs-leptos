@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /home/pi/mtv-movs-leptos/
 
 git pull;
 
