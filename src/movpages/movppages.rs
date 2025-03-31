@@ -59,6 +59,7 @@ pub fn PandasPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }
 
@@ -97,5 +98,6 @@ pub fn PiratesPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }

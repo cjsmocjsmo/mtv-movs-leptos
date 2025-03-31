@@ -97,5 +97,6 @@ pub fn KingsManPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }

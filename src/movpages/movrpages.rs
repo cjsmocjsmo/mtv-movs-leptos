@@ -54,6 +54,7 @@ pub fn RiddickPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }
 

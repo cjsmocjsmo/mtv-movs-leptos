@@ -138,5 +138,6 @@ pub fn HellBoyPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }

@@ -59,6 +59,7 @@ pub fn GhostBustersPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }
 

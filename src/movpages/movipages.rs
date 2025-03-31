@@ -54,5 +54,6 @@ pub fn IndianaJonesPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }

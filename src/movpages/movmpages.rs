@@ -64,6 +64,7 @@ pub fn MenInBlackPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }
 
