@@ -25,7 +25,7 @@ async fn fetch_johnwick() -> Result<Vec<Infos>, Error> {
     Ok(johnwick)
 }
 async fn fetch_jurassicpark() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/jurassicpark").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/jurrasicpark").await?;
     let jurassicpark: Vec<Infos> = response.json().await?;
     Ok(jurassicpark)
 }
