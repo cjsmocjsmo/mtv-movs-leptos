@@ -65,6 +65,7 @@ pub fn BruceLeePage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }
 
@@ -102,6 +103,7 @@ pub fn BruceWillisPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }
 
@@ -140,5 +142,6 @@ pub fn BuzzPage() -> impl IntoView {
                 }
             }).collect_view()}
         </div>
+        <div class="image-placeholder"></div>
     }
 }

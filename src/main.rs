@@ -70,8 +70,6 @@ fn App() -> impl IntoView {
                 <Routes fallback=|| "Not Found.">
                     <Route path=path!("/") view=MovCatListPage />
                     <Route path=path!("/search") view=SearchPage />
-                    
-                    
                     <Route path=path!("/action") view=ActionPage />
                     <Route path=path!("/arnold") view=ArnoldPage />
                     <Route path=path!("/brucelee") view=BruceLeePage />
@@ -118,9 +116,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/vandam") view=VanDamPage />
                     <Route path=path!("/xmen") view=XMenPage />
                 </Routes>
-                
             </main>
-            
         </Router>
         <PlayerControls />
     }
