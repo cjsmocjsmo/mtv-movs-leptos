@@ -50,7 +50,7 @@ use crate::movpages::movopages::OldiesPage;
 use crate::movpages::movppages::PandasPage;
 use crate::movpages::movppages::PiratesPage;
 use crate::movpages::movrpages::RiddickPage;
-use crate::movpages::movspages::{SciFiPage, StalonePage, StarTrekPage, StarWarsPage, SuperHerosPage};
+use crate::movpages::movspages::{SciFiPage, StalonePage, StarTrekPage, StarWarsPage, Stooges, SuperHerosPage};
 use crate::movpages::movtpages::{TinkerBellPage, TomCruisePage, TransformersPage, TremorsPage, TheRockPage};
 use crate::movpages::movvpages::VanDamPage;
 use crate::movpages::movxpages::XMenPage;
@@ -107,6 +107,7 @@ fn App() -> impl IntoView {
                     <Route path=path!("/stalone") view=StalonePage />
                     <Route path=path!("/startrek") view=StarTrekPage />
                     <Route path=path!("/starwars") view=StarWarsPage />
+                    <Route path=path!("/stooges") view=Stooges />
                     <Route path=path!("/superheros") view=SuperHerosPage />
                     <Route path=path!("/tinkerbell") view=TinkerBellPage />
                     <Route path=path!("/tomcruise") view=TomCruisePage />
