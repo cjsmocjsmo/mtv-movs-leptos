@@ -29,6 +29,11 @@ async fn fetch_starwars() -> Result<Vec<Infos>, Error> {
     let starwars: Vec<Infos> = response.json().await?;
     Ok(starwars)
 }
+async fn fetch_stooges() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/starwars").await?;
+    let stooges: Vec<Infos> = response.json().await?;
+    Ok(stooges)
+}
 async fn fetch_superheros() -> Result<Vec<Infos>, Error> {
     let response = reqwest::get("http://10.0.4.41:7777/superheros").await?;
     let superheros: Vec<Infos> = response.json().await?;
@@ -157,6 +162,43 @@ pub fn StarWarsPage() -> impl IntoView {
 
     spawn_local(async move {
         match fetch_starwars().await {
+            Ok(data) => {
+                log::info!("Fetched infos data: {:?}", data); // Debugging log
+                set_infos.set(data);
+            },
+            Err(err) => log::error!("Error fetching infos data: {:?}", err),
+        }
+    });
+
+    view! {
+        <div class="movRow">
+            {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img 
+                        src={info.HttpThumbPath.clone()} 
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
+            }).collect_view()}
+        </div>
+    }
+}
+
+#[component]
+pub fn StoogesPage() -> impl IntoView {
+    let (infos, set_infos) = signal(Vec::new());
+
+    spawn_local(async move {
+        match fetch_stooges().await {
             Ok(data) => {
                 log::info!("Fetched infos data: {:?}", data); // Debugging log
                 set_infos.set(data);
