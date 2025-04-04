@@ -30,7 +30,7 @@ async fn fetch_starwars() -> Result<Vec<Infos>, Error> {
     Ok(starwars)
 }
 async fn fetch_stooges() -> Result<Vec<Infos>, Error> {
-    let response = reqwest::get("http://10.0.4.41:7777/starwars").await?;
+    let response = reqwest::get("http://10.0.4.41:7777/stooges").await?;
     let stooges: Vec<Infos> = response.json().await?;
     Ok(stooges)
 }
