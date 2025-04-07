@@ -30,6 +30,11 @@ async fn fetch_comedy() -> Result<Vec<Infos>, Error> {
     let comedy: Vec<Infos> = response.json().await?;
     Ok(comedy)
 }
+async fn fetch_cheech_and_chong() -> Result<Vec<Infos>, Error> {
+    let response = reqwest::get("http://10.0.4.41:7777/cheechandchong").await?;
+    let cheech_and_chong: Vec<Infos> = response.json().await?;
+    Ok(cheech_and_chong)
+}
 async fn send_get_request(mov_id: &str) -> Result<(), Error> {
     let url = format!("http://10.0.4.41:7777/player_set_media/{}", mov_id);
     reqwest::get(&url).await?;
@@ -149,6 +154,43 @@ pub fn ChuckNorrisPage() -> impl IntoView {
 
 #[component]
 pub fn ComedyPage() -> impl IntoView {
+    let (infos, set_infos) = signal(Vec::new());
+
+    spawn_local(async move {
+        match fetch_comedy().await {
+            Ok(data) => {
+                log::info!("Fetched infos data: {:?}", data); // Debugging log
+                set_infos.set(data);
+            }
+            Err(err) => log::error!("Error fetching infos data: {:?}", err),
+        }
+    });
+
+    view! {
+        <div class="movRow">
+            {let infos = move || infos.get().clone(); move || infos().iter().map(|info| {
+                let info = info.clone();
+                view! {
+                    <img 
+                        src={info.HttpThumbPath.clone()} 
+                        alt={info.Name.clone()}
+                        on:click=move |_| {
+                            let mov_id = info.MovId.clone();
+                            spawn_local(async move {
+                                if let Err(err) = send_get_request(&mov_id).await {
+                                    log::error!("Error sending GET request: {:?}", err);
+                                }
+                            });
+                        }
+                    />
+                }
+            }).collect_view()}
+        </div>
+    }
+}
+
+#[component]
+pub fn CheechAndChongPage() -> impl IntoView {
     let (infos, set_infos) = signal(Vec::new());
 
     spawn_local(async move {
