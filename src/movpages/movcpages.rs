@@ -194,7 +194,7 @@ pub fn CheechAndChongPage() -> impl IntoView {
     let (infos, set_infos) = signal(Vec::new());
 
     spawn_local(async move {
-        match fetch_comedy().await {
+        match fetch_cheech_and_chong().await {
             Ok(data) => {
                 log::info!("Fetched infos data: {:?}", data); // Debugging log
                 set_infos.set(data);
